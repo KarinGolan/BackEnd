@@ -1,6 +1,6 @@
 package Test;
 
-
+///this is a test
 public class VAT {
 double payingVat=0;
 
