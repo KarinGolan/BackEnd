@@ -5,8 +5,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
-
+import mypackage.VAT;
 
 public class VatTest {
 	
