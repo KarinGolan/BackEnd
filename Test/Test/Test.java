@@ -3,13 +3,11 @@ package Test;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-
 import mypackage.VAT;
 
-public class VatTest {
+public class Test {
 	
-	@Test
+
 	public void test() {
 		
 		double total_cost=35;
