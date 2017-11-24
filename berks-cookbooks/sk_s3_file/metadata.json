@@ -1,0 +1,29 @@
+{
+  "name": "sk_s3_file",
+  "version": "2.0.7",
+  "description": "Pure Ruby Chef LWRP for pulling files from S3",
+  "long_description": "Pure Ruby Chef LWRP for pulling files from S3",
+  "maintainer": "Lamont Granquist",
+  "maintainer_email": "lamont@scriptkiddie.org",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  }
+}
