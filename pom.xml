@@ -12,7 +12,7 @@
         <scope>test</scope>
     </dependency>
  </dependencies>
- <packaging>jar</packaging>
+ 
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
