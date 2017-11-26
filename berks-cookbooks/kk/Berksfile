@@ -1,3 +1,0 @@
-source "https://github.com/KarinGolan/Mycode.git"
-cookbook "kk" , github: "Mycode/kk/"
-

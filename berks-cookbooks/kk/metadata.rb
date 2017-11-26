@@ -1,8 +1,0 @@
-name             'kk'
-maintainer       ''
-maintainer_email ''
-license          ''
-description      'Installs/Configures kk'
-long_description 'Installs/Configures kk'
-version          '0.1.0'
-depends 's3_file'
