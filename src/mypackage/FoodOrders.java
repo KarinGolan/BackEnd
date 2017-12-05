@@ -12,7 +12,7 @@ public class FoodOrders {
 
 		public static void main(String[] args) throws Exception, InterruptedException {
 			
-				ServerSocket listener = new ServerSocket(8080);
+				ServerSocket listener = new ServerSocket(8070);
 		        try {
 		            while (true) {
 		                new CalculateTotalCost(listener.accept()).start();
