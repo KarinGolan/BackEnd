@@ -56,7 +56,7 @@ public class FoodOrders {
 	                    total_cost = Vatobject.totalWithVat(Double.parseDouble(input));
 	                    out.println(total_cost);
 	                    
-	        		    Socket socketDB = new Socket("dualstack.internal-database-elb-1104686917.eu-west-1.elb.amazonaws.com.",8090);
+	        		    Socket socketDB = new Socket("internal-database-ELB-1104686917.eu-west-1.elb.amazonaws.com",8090);
 	        	        inFromDB = new BufferedReader(
 	        	                new InputStreamReader(socketDB.getInputStream()));
 	        	        outToDB = new PrintWriter(socketDB.getOutputStream(), true);
