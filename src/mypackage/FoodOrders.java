@@ -12,7 +12,7 @@ public class FoodOrders {
 
 		public static void main(String[] args) throws Exception, InterruptedException {
 			
-				ServerSocket listener = new ServerSocket(8070);
+				ServerSocket listener = new ServerSocket(7070);
 		        try {
 		            while (true) {
 		                new CalculateTotalCost(listener.accept()).start();
@@ -56,7 +56,7 @@ public class FoodOrders {
 	                    total_cost = Vatobject.totalWithVat(Double.parseDouble(input));
 	                    out.println(total_cost);
 	                    
-	        		    Socket socketDB = new Socket("localhost",8090);
+	        		    Socket socketDB = new Socket("internal-database-ELB-1104686917.eu-west-1.elb.amazonaws.com",9090);
 	        	        inFromDB = new BufferedReader(
 	        	                new InputStreamReader(socketDB.getInputStream()));
 	        	        outToDB = new PrintWriter(socketDB.getOutputStream(), true);
