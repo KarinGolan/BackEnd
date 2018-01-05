@@ -9,26 +9,29 @@ import java.net.Socket;
 
 public class FoodOrders {
 
-
-		public static void main(String[] args) throws Exception, InterruptedException {
+	
+	
+		public static void main(String[] args) throws Exception, InterruptedException 
+		{
 			
-				ServerSocket listener = new ServerSocket(6060);
+			 
+			int num,num1 ;
+			num = Integer.parseInt(args[0]);
+			num1 = Integer.parseInt(args[2]);
+				ServerSocket listener = new ServerSocket(num);
+				
 		        try {
-		            while (true) {
-		                new CalculateTotalCost(listener.accept()).start();
-		            }
-		        } finally {
-		            listener.close();
-		        }
+		        	
+		        		while (true) 
+		        		{
+		        			new CalculateTotalCost(listener.accept(),args[1],num1).start();
+		            	}
+		        		
+		            } finally
+		        		{
+		        			listener.close();
+		        		}
 
-		
-		
-		
-		//operate a metode 
-		//total_cost=Vatobject.totalWithVat(total_cost);
-		
-		//total_cost= maincourse+side+drink;
-		//	System.out.println("The total cost of the order is :" +total_cost);
 		}
 		
 	    private static class CalculateTotalCost extends Thread {
@@ -36,11 +39,21 @@ public class FoodOrders {
 			BufferedReader inFromDB;
 		    PrintWriter outToDB;
 		    double total_cost;
-	        public CalculateTotalCost(Socket socket) {
+			private String hostname;
+			private int port;
+		
+			
+		
+		    
+	        public CalculateTotalCost(Socket socket,String hostname,int port) {
 	            this.socket = socket;
+	            this.hostname=hostname;
+	            this.port=port;
 	        }
 	        
-	        public void run() {
+	      
+
+			public void run () {
 	            try {
 
 	            	BufferedReader in = new BufferedReader(
@@ -55,8 +68,10 @@ public class FoodOrders {
 	                    VAT Vatobject =new VAT();
 	                    total_cost = Vatobject.totalWithVat(Double.parseDouble(input));
 	                    out.println(total_cost);
-	                    
-	        		    Socket socketDB = new Socket("internal-database-ELB-1104686917.eu-west-1.elb.amazonaws.com",5050);
+	                   //internal-database-ELB-1104686917.eu-west-1.elb.amazonaws.com 
+	        		    
+	        		    
+						Socket socketDB = new Socket(hostname,port);
 	        	        inFromDB = new BufferedReader(
 	        	                new InputStreamReader(socketDB.getInputStream()));
 	        	        outToDB = new PrintWriter(socketDB.getOutputStream(), true);

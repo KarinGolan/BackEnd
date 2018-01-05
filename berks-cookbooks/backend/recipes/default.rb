@@ -10,7 +10,7 @@ action "run"
 end
 
 execute "running BackEnd.jar" do
-  command "java -jar /home/ec2-user/BackEnd-0.0.1-SNAPSHOT.jar "
+  command "java -jar /home/ec2-user/BackEnd-0.0.1-SNAPSHOT.jar  6060  #{node['backend']['Hostname']} 5050 "
   cwd "/home/ec2-user"
 action "run"
 end
